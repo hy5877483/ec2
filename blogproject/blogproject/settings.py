@@ -76,14 +76,10 @@ WSGI_APPLICATION = 'blogproject.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql_psycopg2',
-       'NAME': os.environ.get('DB_NAME'),
-       'USER': os.environ.get('DB_USER'),
-       'PASSWORD': os.environ.get('DB_PASSWORD'),
-       'HOST': os.environ.get('DB_HOST'),
-       'PORT': '',
-   }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 
@@ -130,8 +126,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-AWS_ACCESS_KEY_ID = 'AKIASBS6QOXCXVWDSD4H'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = 'AKIASBS6QOXCQ4LTVMAL'
+AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'parkheeyeon'
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 AWS_S3_REGION_NAME = 'ap-northeast-2'
